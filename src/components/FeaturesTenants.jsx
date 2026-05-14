@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import PhoneFrame from './PhoneFrame';
+import tenantBrowse from '../assets/Tenant_browse_screen.jpeg';
+import propertyDetail from '../assets/Property_listing_detail.jpeg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -66,7 +69,7 @@ const features = [
 
 export default function FeaturesTenants() {
   return (
-    <section id="features-tenants" className="bg-bg py-20 md:py-28">
+    <section id="features-tenants" className="bg-bg py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.p {...fadeInUp} className="section-label mb-4 text-center">
@@ -75,10 +78,43 @@ export default function FeaturesTenants() {
         <motion.h2
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.1 }}
-          className="heading-display text-3xl sm:text-4xl lg:text-[2.75rem] text-dark text-center mb-14"
+          className="heading-display text-3xl sm:text-4xl lg:text-[2.75rem] text-dark text-center mb-16"
         >
           Everything You Need to Find Home — For Free
         </motion.h2>
+
+        {/* Visual Showcase (Two Phones) */}
+        <div className="relative mb-20 max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="flex justify-center items-end"
+          >
+            {/* Background blob */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary/5 rounded-full blur-3xl -z-10" />
+
+            <div className="relative z-10 translate-x-4 sm:translate-x-8 translate-y-6 sm:translate-y-12">
+              <PhoneFrame src={tenantBrowse} alt="Property Browse Screen" size="md" rotate={-4} />
+            </div>
+            
+            <div className="relative z-20 -translate-x-4 sm:-translate-x-8 hover:-translate-y-4 transition-transform duration-500">
+              <PhoneFrame src={propertyDetail} alt="Property Detail Screen" size="lg" rotate={2} />
+              <div className="absolute -bottom-6 -right-6 bg-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-primary/5">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-muted font-medium">Verified</p>
+                  <p className="text-sm font-bold text-dark">Available Now</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

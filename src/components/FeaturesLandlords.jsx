@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import PhoneFrame from './PhoneFrame';
+import landlordDashboard from '../assets/Landlord_dashboard.jpeg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -79,10 +81,49 @@ export default function FeaturesLandlords() {
         <motion.h2
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.1 }}
-          className="heading-display text-3xl sm:text-4xl lg:text-[2.75rem] text-white text-center mb-14"
+          className="heading-display text-3xl sm:text-4xl lg:text-[2.75rem] text-white text-center mb-16"
         >
           Fill Your Property Faster. Keep More of Your Money.
         </motion.h2>
+
+        {/* Visual Showcase (Dashboard Phone) */}
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="flex justify-center"
+          >
+            <div className="relative">
+              {/* Highlight blob */}
+              <div className="absolute inset-0 bg-accent/20 rounded-full blur-[60px] transform scale-125 -z-10" />
+              <PhoneFrame src={landlordDashboard} alt="Landlord Dashboard Screen" size="lg" />
+              
+              {/* Floating Stat card */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="absolute top-1/4 -left-12 sm:-left-20 bg-card-landlord/90 backdrop-blur-md px-5 py-4 rounded-2xl shadow-2xl border border-white/10"
+              >
+                <p className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-1">New Request</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm">Inspection Booked</p>
+                    <p className="text-accent text-xs">Tomorrow, 10:00 AM</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

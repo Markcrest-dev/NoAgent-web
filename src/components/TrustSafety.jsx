@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import PhoneFrame from './PhoneFrame';
+import digitalAgreement from '../assets/Digital_tenancy_agreement.jpeg';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -48,7 +50,7 @@ const pillars = [
 
 export default function TrustSafety() {
   return (
-    <section id="trust-safety" className="bg-white py-20 md:py-28">
+    <section id="trust-safety" className="bg-white py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.p {...fadeInUp} className="section-label mb-4 text-center">
@@ -64,33 +66,50 @@ export default function TrustSafety() {
         <motion.p
           {...fadeInUp}
           transition={{ ...fadeInUp.transition, delay: 0.2 }}
-          className="text-muted text-center max-w-2xl mx-auto text-base sm:text-lg leading-relaxed mb-14"
+          className="text-muted text-center max-w-2xl mx-auto text-base sm:text-lg leading-relaxed mb-16"
         >
           The one thing agents were supposed to provide was a layer of trust
           between strangers. NoAgent builds that trust directly into the
           platform so you never have to compromise safety to save money.
         </motion.p>
 
-        {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {pillars.map((p, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
-              className="bg-bg rounded-2xl p-7 sm:p-8 border border-dark/5 hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-5 shadow-sm">
-                {p.icon}
-              </div>
-              <h3 className="heading-display text-lg sm:text-xl text-dark mb-2">
-                {p.title}
-              </h3>
-              <p className="text-muted text-sm leading-relaxed">{p.desc}</p>
-            </motion.div>
-          ))}
+        {/* Visual & Grid Layout */}
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
+          {/* Left: 2x2 Grid */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {pillars.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.1 }}
+                className="bg-bg rounded-2xl p-7 sm:p-8 border border-dark/5 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-5 shadow-sm">
+                  {p.icon}
+                </div>
+                <h3 className="heading-display text-lg sm:text-xl text-dark mb-2">
+                  {p.title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">{p.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right: Phone Frame */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+            className="hidden lg:flex justify-center"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl transform scale-110" />
+              <PhoneFrame src={digitalAgreement} alt="Digital Tenancy Agreement Screen" size="md" rotate={2} />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
