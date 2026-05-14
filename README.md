@@ -1,16 +1,60 @@
-# React + Vite
+# NoAgent Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **NoAgent Landing Page** repository! This project is a modern, responsive web landing page designed to promote the NoAgent mobile application.
 
-Currently, two official plugins are available:
+## 🚀 About NoAgent
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+NoAgent is a revolutionary platform that connects landlords and tenants directly — no middlemen, no inflated fees, no wahala. Find your home or fill your property in minutes.
 
-## React Compiler
+The mobile app features:
+- **Zero Agent Fees:** Cut out the middlemen and save money.
+- **Direct Messaging:** Seamless real-time communication between landlords and tenants.
+- **Digital Agreements:** Hassle-free leasing with digital tenancy agreements and inventory checklists.
+- **Property Management:** Built-in tools for handling maintenance requests and rent tracking.
+- **Verified Users:** A trusted community of verified landlords and tenants.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Tech Stack
 
-## Expanding the ESLint configuration
+This landing page is built with performance and aesthetics in mind, utilizing:
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Getting Started
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-url>
+   cd NoAgent-web
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+
+- `src/components/` - Contains all modular UI components such as the Hero section, Features, Trust & Safety, Navbar, Phone mockups, etc.
+- `src/assets/` - Image assets, app screenshots, and other static resources.
+- `index.css` - Global Tailwind configurations and custom CSS properties/animations.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
+
+---
+*Cut Out the Agent. Keep Your Money.*
