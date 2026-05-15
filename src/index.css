@@ -1,19 +1,57 @@
 @import "tailwindcss";
 
+:root {
+  --theme-bg: #F8FAFC;
+  --theme-surface: #FFFFFF;
+  --theme-text-primary: #0F172A;
+  --theme-text-secondary: #475569;
+  --theme-border: #E2E8F0;
+
+  --theme-footer-bg: #0F172A;
+  --theme-footer-border: #334155;
+  --theme-icon-bg: #E2E8F0;
+  --theme-hero-sub: #0B6152;
+  --theme-card-landlord: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg: #0F172A;
+    --theme-surface: #1E293B;
+    --theme-text-primary: #F8FAFC;
+    --theme-text-secondary: #94A3B8;
+    --theme-border: #334155;
+
+    --theme-footer-bg: #020617;
+    --theme-footer-border: #334155;
+    --theme-icon-bg: #334155;
+    --theme-hero-sub: #0B6152;
+    --theme-card-landlord: #1E293B;
+  }
+}
+
 @theme {
-  --color-primary: #085041;
-  --color-accent: #1D9E75;
-  --color-alert: #D85A30;
-  --color-bg: #F1EFE8;
-  --color-dark: #0E1A14;
-  --color-muted: #6B7C74;
-  --color-hero-sub: #9FE1CB;
-  --color-card-landlord: #0F6E56;
-  --color-without-bg: #FFF0EA;
-  --color-with-bg: #E1F5EE;
-  --color-footer-bg: #0E1A14;
-  --color-footer-border: #1a2e26;
-  --color-icon-bg: #E1F5EE;
+  --color-primary: #07453A;
+  --color-primary-light: #0B6152;
+  --color-primary-dark: #042A24;
+  --color-accent: #F59E0B;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Legacy mappings */
+  --color-alert: var(--color-error);
+  --color-bg: var(--theme-bg);
+  --color-dark: var(--theme-text-primary);
+  --color-muted: var(--theme-text-secondary);
+  --color-hero-sub: var(--theme-hero-sub);
+  --color-card-landlord: var(--theme-card-landlord);
+  --color-without-bg: var(--theme-surface);
+  --color-with-bg: var(--theme-bg);
+  --color-footer-bg: var(--theme-footer-bg);
+  --color-footer-border: var(--theme-footer-border);
+  --color-icon-bg: var(--theme-icon-bg);
 
   --font-display: 'DM Serif Display', serif;
   --font-body: 'DM Sans', sans-serif;
@@ -26,7 +64,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-dark);
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
